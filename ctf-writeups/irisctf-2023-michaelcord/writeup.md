@@ -40,7 +40,7 @@ Attached to this repository is an example program that can take a Discord .har f
 
 ## Stage 4: Where is the flag?
 
-After decoding the file, you can either simply search for the flag pattern, or actually understand the traffic. The flag was hidden as a name of a role not granted to anyone on the "michaelcord" server, which on all up-to-date Discord client applications typically isn't visible to unuthorized users.
+After decoding the file, you can either simply search for the flag pattern, or actually understand the traffic. The flag was hidden as a name of a role not granted to anyone on the "michaelcord" server, which on all up-to-date Discord client applications typically isn't visible to unuthorized users. Discord however includes a list of all guilds the user is in, including a complete list of their roles and their permission overrides in the WebSocket HELLO packet. Simply looking at that list was enough to extract the flag.
 
 ## Unintended solutions:
 
