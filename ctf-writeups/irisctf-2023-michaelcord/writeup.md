@@ -12,7 +12,7 @@ The challenge comes with one .har file, at around 40 MB in size. The best way to
 
 ## Stage 2: The data of interest
 
-The way Discord works is that a majority of general UI state is sent using the gateway websocket to the client. For example, there is no HTTP endpoint to get your list of servers (Discord internally refers to them as guilds, and I will too from this point onwards) or a guild's member list. All of that is transmitted over the main websocket connection. 
+The way Discord works is that a majority of general UI state is sent using the gateway websocket to the client. For example, there is no HTTP endpoint to get your list of servers (Discord internally refers to them as guilds, and I will too from this point onwards) with full details, like channel list or roles or a guild's member list. All of that is transmitted over the main websocket connection. 
 
 As such, the next step of the challenge is to identify and extract the client-facing websocket traffic. In the challenge har file, that data starts at line 12057 with a request to `wss://gateway.discord.gg/?encoding=json&v=9&compress=zlib-stream`. This URL already tells us a few things to expect, mainly that data will be encoded using JSON and compressed using something called `zlib-stream`. We'll get back to that.
 
